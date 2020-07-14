@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 // import axios from "axios";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -7,7 +7,30 @@ import Logo from "../../images/logo-large.png";
 import FriendBtn from "../../images/friend-btn.png";
 import NiceBtn from "../../images/nice-btn.png";
 
-function Home() {
+// import FriendBtn from "../../images/friend.png";
+
+function HivePublic() {
+	// const [kittens, setKittens] = useState([]);
+
+	// // ComponentDidMount
+	// useEffect(() => {
+	//   getKittens();
+	// }, []);
+
+	// const getKittens = () => {
+	//   axios.get("/api/kittens").then(({ data }) => {
+	//     setKittens(data);
+	//   });
+	// };
+
+	// const handleClick = (kitten) => {
+	//   axios
+	//     .put("/api/kittens/" + kitten._id, { sleepy: !kitten.sleepy })
+	//     .then(function ({ data }) {
+	//       getKittens();
+	//     });
+	// };
+
 	return (
 		<Container fluid id="main-box">
 			<Row>
@@ -29,12 +52,7 @@ function Home() {
 						/>
 					</button>
 					<button id="left">
-						<img
-							src={Logo}
-							alt="bhave logo"
-							onClick={"Send to hive"}
-							id="img-btn"
-						/>
+						<img src={Logo} alt="bhave logo" id="img-btn" />
 					</button>
 					<button id="right">
 						<img
@@ -62,4 +80,4 @@ function Home() {
 	);
 }
 
-export default Home;
+export default HivePublic;
