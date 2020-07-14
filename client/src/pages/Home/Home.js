@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import Logo from "../../images/logo-large.png";
 import FriendBtn from "../../images/friend-btn.png";
 import NiceBtn from "../../images/nice-btn.png";
-import { NavLink } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 
 function Home() {
 	return (
@@ -29,16 +29,14 @@ function Home() {
 							id="img-btn"
 						/>
 					</button>
-					<NavLink to="/HivePublic" activeClassName="selected">
-						<button id="left">
-							<img
-								src={Logo}
-								alt="bhave logo"
-								onClick={"Send to hive"}
-								id="img-btn"
-							/>
-						</button>
-					</NavLink>
+					<Link to={`/HivePublic`} role="button" id="left">
+						<img
+							src={Logo}
+							alt="bhave logo"
+							onClick={"Send to hive"}
+							id="img-btn"
+						/>
+					</Link>
 					<button id="right">
 						<img
 							src={FriendBtn}

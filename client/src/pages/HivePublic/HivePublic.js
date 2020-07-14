@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import Logo from "../../images/logo-large.png";
 import FriendBtn from "../../images/friend-btn.png";
 import NiceBtn from "../../images/nice-btn.png";
-import { NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function HivePublic() {
 	return (
@@ -14,26 +14,19 @@ function HivePublic() {
 			<Row>
 				<Col fluid md={2} sm={6} id="btn-cont">
 					<button id="right">
-						<img
-							src={NiceBtn}
-							alt="blank hex"
-							onClick={"this toggles to hive"}
-							id="img-btn"
-						/>
+						<img src={NiceBtn} alt="blank hex" onClick={""} id="img-btn" />
 					</button>
 					<button id="right">
+						<img src={FriendBtn} alt="blank hex" onClick={""} id="img-btn" />
+					</button>
+					<Link to={`/`} role="button" id="right">
 						<img
-							src={FriendBtn}
-							alt="blank hex"
-							onClick={"this toggles to hive"}
+							src={Logo}
+							alt="bhave logo"
+							onClick={"Send to dash"}
 							id="img-btn"
 						/>
-					</button>
-					<NavLink to="/" activeClassName="selected">
-						<button id="left">
-							<img src={Logo} alt="bhave logo" id="img-btn" />
-						</button>
-					</NavLink>
+					</Link>
 					<button id="right">
 						<img src={FriendBtn} alt="blank hex" onClick={""} id="img-btn" />
 					</button>
