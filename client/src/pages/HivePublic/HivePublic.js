@@ -6,31 +6,9 @@ import Col from "react-bootstrap/Col";
 import Logo from "../../images/logo-large.png";
 import FriendBtn from "../../images/friend-btn.png";
 import NiceBtn from "../../images/nice-btn.png";
-
-// import FriendBtn from "../../images/friend.png";
+import { NavLink } from "react-router-dom";
 
 function HivePublic() {
-	// const [kittens, setKittens] = useState([]);
-
-	// // ComponentDidMount
-	// useEffect(() => {
-	//   getKittens();
-	// }, []);
-
-	// const getKittens = () => {
-	//   axios.get("/api/kittens").then(({ data }) => {
-	//     setKittens(data);
-	//   });
-	// };
-
-	// const handleClick = (kitten) => {
-	//   axios
-	//     .put("/api/kittens/" + kitten._id, { sleepy: !kitten.sleepy })
-	//     .then(function ({ data }) {
-	//       getKittens();
-	//     });
-	// };
-
 	return (
 		<Container fluid id="main-box">
 			<Row>
@@ -51,29 +29,21 @@ function HivePublic() {
 							id="img-btn"
 						/>
 					</button>
-					<button id="left">
-						<img src={Logo} alt="bhave logo" id="img-btn" />
+					<NavLink to="/" activeClassName="selected">
+						<button id="left">
+							<img src={Logo} alt="bhave logo" id="img-btn" />
+						</button>
+					</NavLink>
+					<button id="right">
+						<img src={FriendBtn} alt="blank hex" onClick={""} id="img-btn" />
 					</button>
 					<button id="right">
-						<img
-							src={FriendBtn}
-							alt="blank hex"
-							onClick={"this toggles to hive"}
-							id="img-btn"
-						/>
-					</button>
-					<button id="right">
-						<img
-							src={NiceBtn}
-							alt="blank hex"
-							onClick={"this toggles to hive"}
-							id="img-btn"
-						/>
+						<img src={NiceBtn} alt="blank hex" onClick={""} id="img-btn" />
 					</button>
 				</Col>
 				<Col fluid md={10} sm={6}>
-					<h1 id="dash">.</h1>
-					<Container fluid md-9 id="dash-content"></Container>
+					<h1 id="hive">.</h1>
+					<Container fluid md-9 id="hive-content"></Container>
 				</Col>
 			</Row>
 		</Container>
