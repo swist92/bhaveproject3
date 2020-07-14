@@ -6,20 +6,6 @@ import Col from "react-bootstrap/Col";
 import Logo from "../../images/logo-large.png";
 import FriendBtn from "../../images/friend-btn.png";
 import NiceBtn from "../../images/nice-btn.png";
-import { Redirect } from 'react-router';
-
-// ... your class implementation
-
-handleOnClick = () => {
-  // some action...
-  // then redirect
-  this.setState({redirect: true});
-}
-
-render() {
-  if (this.state.redirect) {
-    return <Redirect push to="/HivePublic" />;
-  }
 
 function Home() {
 	return (
@@ -46,7 +32,7 @@ function Home() {
 						<img
 							src={Logo}
 							alt="bhave logo"
-							onClick={this.handleOnClick}
+							onClick={"Send to hive"}
 							id="img-btn"
 						/>
 					</button>
