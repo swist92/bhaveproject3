@@ -4,6 +4,10 @@ body {
 	inline-size: 100%;
 }
 
+button {
+	outline: none;
+}
+
 #img-btn {
 	height: 150px;
 }
@@ -27,6 +31,7 @@ body {
 
 #dash-content {
 	min-height: 480px;
+	max-height: 100%;
 	inline-size: 100%;
 	background-color: rgba(0, 0, 0, 0.479);
 	border-radius: 10px;
@@ -34,6 +39,7 @@ body {
 
 #hive {
 	background-image: url(../src/images/hive-header1.png);
+	background-position: top;
 	inline-size: 100%;
 	height: 125px;
 	border-radius: 10px;
@@ -43,6 +49,7 @@ body {
 
 #hive-content {
 	min-height: 480px;
+	max-height: 100%;
 	inline-size: 100%;
 	background-color: rgba(0, 0, 0, 0.479);
 	border-radius: 10px;
