@@ -1,12 +1,3 @@
-@media (min-width: 768px) and (max-width: 991.98px) {
-	#btn-cont {
-		justify-content: center;
-		padding-top: 30px;
-		position: sticky;
-		top: 0;
-		inline-size: 100%;
-	}
-}
 body {
 	background-image: url(../src/images/honeycomb.png);
 	background-repeat: no-repeat;
@@ -22,6 +13,7 @@ body {
 	padding-top: 30px;
 	position: sticky;
 	top: 0;
+	max-height: 740px;
 }
 
 #dash {
@@ -34,7 +26,23 @@ body {
 }
 
 #dash-content {
-	height: 600px;
+	min-height: 480px;
+	inline-size: 100%;
+	background-color: rgba(0, 0, 0, 0.479);
+	border-radius: 10px;
+}
+
+#hive {
+	background-image: url(../src/images/hive-header1.png);
+	inline-size: 100%;
+	height: 125px;
+	border-radius: 10px;
+	color: transparent;
+	margin-top: 20px;
+}
+
+#hive-content {
+	min-height: 480px;
 	inline-size: 100%;
 	background-color: rgba(0, 0, 0, 0.479);
 	border-radius: 10px;
