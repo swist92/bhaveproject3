@@ -65,6 +65,11 @@ button:hover {
 	min-height: 480px;
 }
 
+#i2 {
+	position: absolute;
+	left: -5000px;
+}
+
 #img-btn {
 	height: 160px;
 }
