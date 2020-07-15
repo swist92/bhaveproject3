@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { NavLink } from "react-router-dom";
 
 // Styles
 import "./App.css";
+import "./Media.css";
 
 //Authorization
 import Amplify from "aws-amplify";
@@ -17,15 +17,17 @@ import HivePublic from "./pages/HivePublic";
 Amplify.configure(awsconfig);
 
 function App() {
-  return (
-    <AmplifyAuthenticator>
-      <Router>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/HivePublic" component={HivePublic} />
-      </Router>
-      <AmplifySignOut />
-    </AmplifyAuthenticator>
-  );
+	return (
+		<AmplifyAuthenticator>
+			<Router>
+				<div>
+					<Route exact path="/" component={Home} />
+					<Route path="/HivePublic" component={HivePublic} />
+				</div>
+			</Router>
+			<AmplifySignOut />
+		</AmplifyAuthenticator>
+	);
 }
 
 export default App;
