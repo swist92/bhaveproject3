@@ -6,31 +6,33 @@ import Col from "react-bootstrap/Col";
 import Logo from "../../images/logo-large.png";
 import FriendBtn from "../../images/friend-btn.png";
 import NiceBtn from "../../images/nice-btn.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function HivePublic() {
 	return (
 		<Container fluid id="main-box">
 			<Row>
 				<Col fluid md={2} sm={6} id="btn-cont">
-					<button id="right">
+					<button id="left">
 						<img src={NiceBtn} alt="blank hex" onClick={""} id="img-btn" />
 					</button>
 					<button id="right">
 						<img src={FriendBtn} alt="blank hex" onClick={""} id="img-btn" />
 					</button>
-					<Link to={`/`} role="button" id="right">
-						<img
-							src={Logo}
-							alt="bhave logo"
-							onClick={"Send to dash"}
-							id="img-btn"
-						/>
+					<Link to={`/`} role="button" id="left">
+						<button>
+							<img
+								src={Logo}
+								alt="bhave logo"
+								onClick={"Send to dash"}
+								id="img-btn"
+							/>
+						</button>
 					</Link>
 					<button id="right">
 						<img src={FriendBtn} alt="blank hex" onClick={""} id="img-btn" />
 					</button>
-					<button id="right">
+					<button id="left">
 						<img src={NiceBtn} alt="blank hex" onClick={""} id="img-btn" />
 					</button>
 				</Col>
