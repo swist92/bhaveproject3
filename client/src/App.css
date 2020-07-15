@@ -78,8 +78,26 @@ button:hover {
 	align-items: left;
 }
 
+label {
+	color: white;
+}
+
 #main-box {
 	height: 100%;
+}
+
+#mc_embed_signup {
+	background: transparent;
+	font: 14px Helvetica, Arial, sans-serif;
+	width: 30%;
+}
+
+#mc_embed_signup_scroll {
+	width: 400px;
+}
+
+#mc-embedded-subscribe-form {
+	width: 600px;
 }
 
 #right {

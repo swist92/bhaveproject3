@@ -28,10 +28,11 @@ function App() {
 				</div>
 			</Router>
 			<AmplifySignOut />
-			<Navbar bg="dark">
-				<Navbar.Brand href="#home">Bhave Newsletter</Navbar.Brand>
+			<Navbar bg="dark" id="navb">
 				<div id="mc_embed_signup">
+					<Navbar.Brand href="#home">Bhave Newsletter</Navbar.Brand>
 					<Form
+						inline
 						action="https://gmail.us10.list-manage.com/subscribe/post?u=61def9bff33162874e3fac869&amp;id=a4062c575d"
 						method="post"
 						id="mc-embedded-subscribe-form"
@@ -41,7 +42,7 @@ function App() {
 						novalidate
 					>
 						<div id="mc_embed_signup_scroll">
-							<label for="mce-EMAIL">Subscribe</label>
+							<label for="mce-EMAIL"></label>
 							<input
 								type="email"
 								value=""
