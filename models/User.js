@@ -12,6 +12,10 @@ const UserSchema = new Schema({
   sub: {
     type: String,
     required: true,
+  },
+  inspiration: {
+    type: String,
+    required: false,
   }
 });
 
