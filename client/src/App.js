@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 
-// Styles
+// Style
 import "./App.css";
 import "./Media.css";
+import bee2 from "./images/bee2.png";
+import Image from "react-bootstrap/Image";
 
 //Authorization
 import Amplify from "aws-amplify";
@@ -79,6 +81,7 @@ function App() {
 							</div>
 						</div>
 					</Form>
+					<Image src={bee2} alt="bee clipart" id="bee2" />
 				</div>
 			</Navbar>
 		</AmplifyAuthenticator>

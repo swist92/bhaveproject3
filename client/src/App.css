@@ -1,3 +1,9 @@
+#bee2 {
+	height: 20px;
+	position: relative;
+	image-orientation: ;
+}
+
 body {
 	background-image: url(../src/images/honeycomb.png);
 	background-repeat: no-repeat;
@@ -98,6 +104,10 @@ label {
 
 #mc-embedded-subscribe-form {
 	width: 600px;
+}
+
+#navb {
+	justify-content: left;
 }
 
 #right {
