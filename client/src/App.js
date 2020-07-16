@@ -3,10 +3,6 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 
-// Styles
-import "./App.css";
-import "./Media.css";
-
 //Authorization
 import Amplify from "aws-amplify";
 import { Auth } from "aws-amplify";
@@ -18,13 +14,28 @@ import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 import Home from "./pages/Home";
 import HivePublic from "./pages/HivePublic";
 
+// Utils
+import API from "./utils/API";
+
+// Styles
+import "./App.css";
+import "./Media.css";
+
 Amplify.configure(awsconfig);
 
 function App() {
   Auth.currentAuthenticatedUser({
     bypassCache: true, // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
   })
-    .then((user) => console.log(user))
+    .then((user) => {
+      console.log(user);
+      const userObj = {
+        username: user.username,
+        email: user.attributes.email,
+        sub: user.attributes.sub,
+      };
+      API.createUser(userObj);
+    })
     .catch((err) => console.log(err));
 
   return (

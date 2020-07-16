@@ -9,11 +9,10 @@ const UserSchema = new Schema({
   email: {
     type: String,
   },
-//   attributes: {
-//     sub: String,
-//     type: String,
-//     required: true,
-//   },
+  sub: {
+    type: String,
+    required: true,
+  }
 });
 
 module.exports = mongoose.model("User", UserSchema);
