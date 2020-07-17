@@ -1,16 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-// Common Components
-import Nav from "./common/Nav";
-
-// React Bootstrap Components
-import Navbar from "react-bootstrap/Navbar";
-import Form from "react-bootstrap/Form";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-
 // Style
 import "./App.css";
 import "./Media.css";
@@ -22,6 +12,16 @@ import Amplify from "aws-amplify";
 import { Auth } from "aws-amplify";
 import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 import awsconfig from "./aws-exports";
+
+// Common Components
+import Nav from "./common/Nav";
+
+// React Bootstrap Components
+import Navbar from "react-bootstrap/Navbar";
+import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 // Pages
 import Home from "./pages/Home";
@@ -55,10 +55,20 @@ function App() {
 	return (
 		<AmplifyAuthenticator>
 			<Router>
-				<div>
-					<Route exact path="/" component={Home} />
-					<Route path="/HivePublic" component={HivePublic} />
-				</div>
+				<Container fluid id="main-box">
+					<Row>
+						<Col fluid md={3} sm={3} id="btn-cont">
+							<Nav />
+						</Col>
+						<Col fluid md={9} sm={9} id="content-cont">
+							<h1 id="dash">.</h1>
+							<Container fluid md-9 id="dash-content">
+								<Route exact path="/" component={Home} />
+								<Route path="/HivePublic" component={HivePublic} />
+							</Container>
+						</Col>
+					</Row>
+				</Container>
 			</Router>
 
 			<AmplifySignOut />
