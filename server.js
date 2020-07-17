@@ -7,7 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 // mongoose connection
-mongoose.connect("mongodb://localhost/bhavedb", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/bhavedb", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
