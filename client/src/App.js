@@ -1,7 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+// Common Components
+import Nav from "./common/Nav";
+
+// React Bootstrap Components
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 // Style
 import "./App.css";
