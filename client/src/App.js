@@ -30,6 +30,7 @@ import ContactModal from "../src/components/Modal/ContactModal";
 
 // Utils
 import API from "./utils/API";
+import Inspiration from "./components/Inspiration/Inspiration";
 
 function App() {
 	Auth.currentAuthenticatedUser({
@@ -51,7 +52,7 @@ function App() {
 			<Router>
 				<Container fluid id="main-box">
 					<Row>
-						<Col fluid md={3} sm={3} id="btn-cont">
+						<Col fluid md={2} sm={3} id="btn-cont">
 							<Nav />
 						</Col>
 						<Col fluid md={9} sm={9} id="content-cont">
@@ -59,6 +60,7 @@ function App() {
 							<Container fluid md-9 id="dash-content">
 								<Route exact path="/" component={Home} />
 								<Route path="/HivePublic" component={HivePublic} />
+								<Route path="/Inspiration" component={Inspiration} />
 							</Container>
 						</Col>
 					</Row>
