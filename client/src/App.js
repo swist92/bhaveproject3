@@ -12,15 +12,16 @@ import Image from "react-bootstrap/Image";
 //Authorization
 import Amplify from "aws-amplify";
 import { Auth } from "aws-amplify";
-
-import awsconfig from "./aws-exports";
 import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+import awsconfig from "./aws-exports";
 
 // Pages
 import Home from "./pages/Home";
 import HivePublic from "./pages/HivePublic";
+import ContactModal from "../src/components/Modal/ContactModal";
 
-Amplify.configure(awsconfig);
+// Utils
+import API from "./utils/API";
 
 function App() {
 	return (
