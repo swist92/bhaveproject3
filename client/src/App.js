@@ -11,6 +11,12 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+// Style
+import "./App.css";
+import "./Media.css";
+import bee2 from "./images/bee2.png";
+import Image from "react-bootstrap/Image";
+
 //Authorization
 import Amplify from "aws-amplify";
 import { Auth } from "aws-amplify";
@@ -25,26 +31,7 @@ import ContactModal from "../src/components/Modal/ContactModal";
 // Utils
 import API from "./utils/API";
 
-// Styles
-import "./App.css";
-import "./Media.css";
-
-Amplify.configure(awsconfig);
-
 function App() {
-  Auth.currentAuthenticatedUser({
-    bypassCache: true, // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
-  })
-    .then((user) => {
-      console.log(user);
-      const userObj = {
-        username: user.username,
-        email: user.attributes.email,
-        sub: user.attributes.sub,
-      };
-      API.createUser(userObj);
-    })
-    .catch((err) => console.log(err));
 
   return (
     </AmplifyAuthenticator>
@@ -60,8 +47,20 @@ function App() {
     <AmplifyAuthenticator>
       <Router>
         <div>
-          <Route exact path="/" component={Home} />
-          <Route path="/HivePublic" component={HivePublic} />
+				<Container fluid id="main-box">
+					<Row>
+						<Col fluid md={3} sm={3} id="btn-cont">
+							<Nav />
+						</Col>
+						<Col fluid md={9} sm={9} id="content-cont">
+							<h1 id="dash">.</h1>
+							<Container fluid md-9 id="dash-content">
+								<Route exact path="/" component={Home} />
+								<Route path="/HivePublic" component={HivePublic} />
+							</Container>
+						</Col>
+					</Row>
+				</Container>
         </div>
       </Router>
       <AmplifySignOut />
