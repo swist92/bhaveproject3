@@ -31,12 +31,6 @@ import ContactModal from "../src/components/Modal/ContactModal";
 // Utils
 import API from "./utils/API";
 
-// Styles
-import "./App.css";
-import "./Media.css";
-
-Amplify.configure(awsconfig);
-
 function App() {
 	Auth.currentAuthenticatedUser({
 		bypassCache: true, // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
