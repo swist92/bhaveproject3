@@ -9,7 +9,7 @@ function Inspiration() {
 				<Form.Label>Who is the person you are complimenting?</Form.Label>
 				<Form.Control type="text" placeholder="Joan Huffelpump" />
 				<Form.Text className="text-muted">
-					Make someones day with our automated inspiration generator.
+					Make someone's day with our automated inspiration generator.
 				</Form.Text>
 			</Form.Group>
 			<Button variant="primary" type="submit">
