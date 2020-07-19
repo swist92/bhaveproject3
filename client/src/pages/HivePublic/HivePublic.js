@@ -13,10 +13,14 @@ class HivePublic extends Component {
   state = {
     inspiration: ""
   }
+
+  // Pull the inspiration from the database using API from line 10
+  // use this.setState() to change inspiration from "" to whatever you pulled from the database
+
   render() {
     return (
       <>
-        <h1>Welcome to hive public!</h1>
+        <h1>Welcome to Hive Public!</h1>
         <p>Sarah said {this.state.inspiration} to Hannah!</p>
       </>
     );
