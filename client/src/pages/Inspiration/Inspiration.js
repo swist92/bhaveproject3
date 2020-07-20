@@ -41,7 +41,7 @@ class Inspiration extends Component {
 						<Form.Label>Who would you like to send some love to?</Form.Label>
 						<Form.Control
 							type="text"
-							placeholder="Write the name of someon e you care about..."
+							placeholder="Write the name of someone you care about..."
 						/>
 					</Form.Group>
 				</Form>
@@ -53,7 +53,7 @@ class Inspiration extends Component {
 					Random
 				</Button>
 				<Form.Text className="text-muted">
-					Make someones day with our automated inspiration generator.
+					Make someone's day with our automated inspiration generator.
 				</Form.Text>
 				<Form.Group controlId="exampleForm.ControlTextarea1">
 					<Form.Label>Write Compliment</Form.Label>
