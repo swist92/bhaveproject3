@@ -62,8 +62,8 @@ class Inspiration extends Component {
 				<Button variant="primary" type="submit" onClick={this.saveHive}>
 					Submit
 				</Button>
-				<Card onClick={this.loadNextInspiration}>
-					<Card.Img variant="bottom" src={this.state.image} />
+				<Card onClick={this.loadNextInspiration} id="inspire-card">
+					<Card.Img variant="bottom" src={this.state.image} id="card-img" />
 				</Card>
 				<Gift></Gift>
 			</>

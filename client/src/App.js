@@ -68,8 +68,6 @@ function App() {
 					</Row>
 				</Container>
 			</Router>
-			<AmplifySignOut />
-			<ContactModal />
 			<Navbar bg="dark" id="navb">
 				<Navbar.Brand href="#home">Bhave Newsletter</Navbar.Brand>
 				<div id="mc_embed_signup">
@@ -115,6 +113,8 @@ function App() {
 					</Form>
 				</div>
 			</Navbar>
+			<ContactModal />
+			<AmplifySignOut id="sign-out" />
 		</AmplifyAuthenticator>
 	);
 }
