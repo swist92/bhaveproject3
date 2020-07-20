@@ -4,34 +4,34 @@ import React, { useState } from "react";
 import ContactUs from "../ContactUs/ContactUs";
 
 function ContactModal() {
-  const [show, setShow] = useState(false);
+	const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+	const handleClose = () => setShow(false);
+	const handleShow = () => setShow(true);
 
-  return (
-    <>
-      <Button variant="secondary" onClick={handleShow}>
-        Contact Us
-      </Button>
+	return (
+		<>
+			<Button variant="secondary" id="contact-us" onClick={handleShow}>
+				Contact Us
+			</Button>
 
-      <Modal
-        show={show}
-        onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
-      >
-        <Modal.Body>
-          <ContactUs />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
-  );
+			<Modal
+				show={show}
+				onHide={handleClose}
+				backdrop="static"
+				keyboard={false}
+			>
+				<Modal.Body>
+					<ContactUs />
+				</Modal.Body>
+				<Modal.Footer>
+					<Button variant="secondary" onClick={handleClose}>
+						Close
+					</Button>
+				</Modal.Footer>
+			</Modal>
+		</>
+	);
 }
 
 export default ContactModal;

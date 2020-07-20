@@ -1,49 +1,52 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FriendBtn from "../images/friend-btn.png";
-import NiceBtn from "../images/nice-btn.png";
+import Inspire from "../images/Inspire-btn.png";
+import Community from "../images/Community-btn.png";
+import Hive from "../images/Hive.png";
 import Logo from "../images/logo-large.png";
-import Blank from "../images/blankhex.png";
 
 // React Bootstrap Components
 import Image from "react-bootstrap/Image";
+import { Container } from "react-bootstrap";
 
 function Navbar() {
 	return (
 		<div>
+			<Link to={`/`}>
+				<button id="left">
+					<Image src={Logo} alt="bhave logo" id="img-btn" />
+				</button>
+			</Link>
+			<Link to={`/HivePublic`}>
+				<button id="right">
+					<img
+						src={Hive}
+						alt="Hive Button"
+						onClick={"this toggles to hive"}
+						id="img-btn"
+					/>
+				</button>
+			</Link>
 			<Link to={`/Inspiration`}>
 				<button id="left">
 					<img
-						src={Blank}
+						src={Inspire}
 						alt="pictures with motivation quotes"
 						onClick={"this toggles to hive"}
 						id="img-btn"
 					/>
 				</button>
 			</Link>
-			<Link to={`/`}>
+			<Link to={`/Community`}>
 				<button id="right">
 					<img
-						src={Blank}
+						src={Community}
 						alt="blank hex"
 						onClick={"this toggles to hive"}
 						id="img-btn"
 					/>
 				</button>
 			</Link>
-			<Link to={`/HivePublic`}>
-				<button id="left">
-					<Image src={Logo} alt="bhave logo" id="img-btn" />
-				</button>
-			</Link>
-			<button id="right">
-				<img
-					src={Blank}
-					alt="blank hex"
-					onClick={"this toggles to hive"}
-					id="img-btn"
-				/>
-			</button>
 		</div>
 	);
 }

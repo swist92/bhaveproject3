@@ -1,20 +1,18 @@
 @media only screen and (max-width: 575px) {
-	#img-btn {
-		inline-size: 45%;
-	}
-
 	#dash {
 		background-image: url(../src/images/flowers-yellow.png);
 		background-repeat: no-repeat;
 		background-size: 100%;
 		border-radius: 10px;
 		color: transparent;
-		height: 26%;
+		height: 17%;
 		margin-top: 20px;
+		margin-left: 0px;
 	}
 
 	#dash-content {
 		min-height: 300px;
+		margin-left: 0px;
 	}
 
 	#hive {
@@ -25,5 +23,9 @@
 		color: transparent;
 		height: 18%;
 		margin-top: 20px;
+	}
+
+	#img-btn {
+		inline-size: 32%;
 	}
 }
