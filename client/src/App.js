@@ -27,10 +27,11 @@ import Col from "react-bootstrap/Col";
 import Home from "./pages/Home";
 import HivePublic from "./pages/HivePublic";
 import ContactModal from "../src/components/Modal/ContactModal";
+import Inspiration from "./pages/Inspiration/Inspiration";
+import Community from "./pages/Community/Community";
 
 // Utils
 import API from "./utils/API";
-import Inspiration from "./components/Inspiration/Inspiration";
 
 function App() {
 	Auth.currentAuthenticatedUser({
@@ -61,18 +62,19 @@ function App() {
 								<Route exact path="/" component={Home} />
 								<Route path="/HivePublic" component={HivePublic} />
 								<Route path="/Inspiration" component={Inspiration} />
+								<Route path="/Community" component={Community} />
 							</Container>
 						</Col>
 					</Row>
 				</Container>
 			</Router>
-
 			<AmplifySignOut />
+			<ContactModal />
 			<Navbar bg="dark" id="navb">
+				<Navbar.Brand href="#home">Bhave Newsletter</Navbar.Brand>
 				<div id="mc_embed_signup">
-					<Navbar.Brand href="#home">Bhave Newsletter</Navbar.Brand>
 					<Form
-						inline
+						flex
 						action="https://gmail.us10.list-manage.com/subscribe/post?u=61def9bff33162874e3fac869&amp;id=a4062c575d"
 						method="post"
 						id="mc-embedded-subscribe-form"
@@ -110,7 +112,6 @@ function App() {
 								></input>
 							</div>
 						</div>
-						<ContactModal />
 					</Form>
 				</div>
 			</Navbar>

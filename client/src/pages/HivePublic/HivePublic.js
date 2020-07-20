@@ -1,16 +1,24 @@
-import React from "react";
-// import axios from "axios";
-import Container from "react-bootstrap/Container";
-import Image from "react-bootstrap/Image";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Logo from "../../images/logo-large.png";
-import FriendBtn from "../../images/friend-btn.png";
-import NiceBtn from "../../images/nice-btn.png";
-import { Link } from "react-router-dom";
+import React, { Component } from "react";
 
-function HivePublic() {
-  return <h1>Welcome to hive public!</h1>;
+class HivePublic extends Component {
+	state = {
+		inspiration: "",
+	};
+
+	// Pull the inspiration from the database using API from line 10
+	// use this.setState() to change inspiration from "" to whatever you pulled from the database
+
+	render() {
+		return (
+			<>
+				<h1 id="hive-head">The Hive!</h1>
+				<h5 className="centered">
+					See what other busy bees are doing to lift hearts and build community.
+				</h5>
+				<p id="hive-text">Sarah said {this.state.inspiration} to Hannah!</p>
+			</>
+		);
+	}
 }
 
 export default HivePublic;
