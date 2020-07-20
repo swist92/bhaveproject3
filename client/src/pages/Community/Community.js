@@ -5,7 +5,7 @@ export function Community() {
 		<>
 			<h1>
 				Here are some charitable programs that could certainly use your support.
-				Better yourself by imrpoving the world!
+				Better yourself by improving the world!
 			</h1>
 		</>
 	);
