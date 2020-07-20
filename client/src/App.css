@@ -6,7 +6,8 @@
 body {
 	background-image: url(../src/images/honeycomb.png);
 	background-repeat: no-repeat;
-	inline-size: 100%;
+	position: relative;
+	width: 100%;
 }
 
 #btn-cont {
@@ -29,6 +30,12 @@ button:hover {
 	background: transparent;
 	box-shadow: 0px 0px 0px transparent;
 	border: 0px solid transparent;
+}
+
+#card-img {
+	width: 40%;
+	align-self: center;
+	border-radius: 10px;
 }
 
 .centered {
@@ -59,13 +66,23 @@ button:hover {
 #dash-content {
 	background-color: rgba(0, 0, 0, 0.479);
 	border-radius: 10px;
-	margin-bottom: 140px;
+	margin-bottom: 200px;
 	margin-left: 20px;
 	max-height: 100%;
 	min-height: 480px;
 	padding-bottom: 10px;
 	padding-top: 10px;
 	width: 100%;
+}
+
+#footer {
+	display: block;
+	text-align: center;
+	font-size: 0.75em;
+	bottom: 0;
+	width: 100%;
+	height: 30px;
+	position: fixed;
 }
 
 #gift-cont {
@@ -132,6 +149,14 @@ button:hover {
 	left: -5000px;
 }
 
+#inspire-card {
+	background-color: transparent;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	padding: 5px;
+	border: none;
+}
+
 #img-btn {
 	height: 160px;
 }
@@ -146,6 +171,10 @@ label {
 
 #main-box {
 	height: 100%;
+}
+
+#mce-EMAIL {
+	width: 200px;
 }
 
 #mc_embed_signup form {
@@ -165,9 +194,15 @@ label {
 }
 
 #navb {
-	height: 55px;
+	object-position: bottom;
+	bottom: 0;
+	width: 100%;
 }
 
 #right {
 	align-self: right;
+}
+
+#sign-out {
+	position: center;
 }
