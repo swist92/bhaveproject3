@@ -10,5 +10,9 @@ export default {
   },
   getRandomInspiration: function() {
     return axios.get("/api/inspiration");
+  },
+
+  createCompliment: function(complimentData) {
+    return axios.post("/api/compliments", complimentData);
   }
 };

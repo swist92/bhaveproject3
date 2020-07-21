@@ -4,12 +4,39 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import API from "../../utils/API";
 import Gift from "../../components/Gifts/Gift";
-
 class Inspiration extends Component {
   state = {
     image: "",
     compliment: "",
   };
+<<<<<<< HEAD
+  
+  handleSubmit = (event) => {
+    event.preventDefault();
+	console.log(this.state.compliment);
+	API.createCompliment()
+		.then((res) =>{
+			this.setState({
+				compliment: this.state.compliment,
+			})
+		})
+		.catch((err) => console.log(err));
+  };
+
+  handleCompliment = (event) => {
+    this.setState({ compliment: event.target.value });
+  };
+  loadNextInspiration = (event) => {
+    event.preventDefault();
+    API.getRandomInspiration()
+      .then((res) => {
+        this.setState({
+          image: res.data[0].media,
+        });
+      })
+      .catch((err) => console.log(err));
+  };
+=======
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -31,6 +58,7 @@ class Inspiration extends Component {
       .catch((err) => console.log(err));
   };
 
+>>>>>>> a278d41638ca53fb73822c8bcd03c9f14bfef856
   render() {
     return (
       <>
@@ -43,7 +71,10 @@ class Inspiration extends Component {
             />
           </Form.Group>
         </Form>
+<<<<<<< HEAD
+=======
 
+>>>>>>> a278d41638ca53fb73822c8bcd03c9f14bfef856
         <Button
           variant="warning"
           type="submit"
@@ -51,6 +82,13 @@ class Inspiration extends Component {
         >
           Random
         </Button>
+<<<<<<< HEAD
+        <Form.Text className="text-muted">
+          Make someone's day with our automated inspiration generator.
+        </Form.Text>
+        <Form.Group controlId="exampleForm.ControlTextarea1">
+          <Form.Label>Write Compliment</Form.Label>
+=======
 
         <Form.Text className="text-muted">
           Make someone's day with our automated inspiration generator.
@@ -59,6 +97,7 @@ class Inspiration extends Component {
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label>Write Compliment</Form.Label>
 
+>>>>>>> a278d41638ca53fb73822c8bcd03c9f14bfef856
           <Form.Control
             name="compliment"
             placeholder="EX. You look fly."
@@ -68,7 +107,10 @@ class Inspiration extends Component {
             rows="3"
           />
         </Form.Group>
+<<<<<<< HEAD
+=======
 
+>>>>>>> a278d41638ca53fb73822c8bcd03c9f14bfef856
         <Button onClick={this.handleSubmit} variant="primary">
           Submit
         </Button>
@@ -80,5 +122,9 @@ class Inspiration extends Component {
     );
   }
 }
+<<<<<<< HEAD
+export default Inspiration;
+=======
 
 export default Inspiration;
+>>>>>>> a278d41638ca53fb73822c8bcd03c9f14bfef856
