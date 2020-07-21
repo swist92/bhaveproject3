@@ -1,6 +1,19 @@
 #bee2 {
 	height: 20px;
 	position: relative;
+	animation-name: spin;
+	animation-duration: 5000ms;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 body {
@@ -198,6 +211,12 @@ label {
 	object-position: bottom;
 	bottom: 0;
 	width: 100%;
+	justify-content: center;
+	color: white;
+}
+
+#newsletter-head {
+	color: white;
 }
 
 #right {
