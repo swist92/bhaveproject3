@@ -1,5 +1,9 @@
 import React from "react";
+import ReactDOM from "react-dom";
+import { SocialIcon } from "react-social-icons";
+
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 // Style
 import "./App.css";
@@ -18,7 +22,6 @@ import Nav from "./common/Nav";
 
 // React Bootstrap Components
 import Navbar from "react-bootstrap/Navbar";
-import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -53,12 +56,12 @@ function App() {
 			<Router>
 				<Container fluid id="main-box">
 					<Row>
-						<Col fluid md={2} sm={3} id="btn-cont">
+						<Col md={2} sm={3} id="btn-cont">
 							<Nav />
 						</Col>
-						<Col fluid md={9} sm={9} id="content-cont">
+						<Col md={9} sm={9} id="content-cont">
 							<h1 id="dash">.</h1>
-							<Container fluid md-9 id="dash-content">
+							<Container id="dash-content">
 								<Route exact path="/" component={Home} />
 								<Route path="/HivePublic" component={HivePublic} />
 								<Route path="/Inspiration" component={Inspiration} />
@@ -69,49 +72,22 @@ function App() {
 				</Container>
 			</Router>
 			<Navbar bg="dark" id="navb">
-				<Navbar.Brand href="#home">Bhave Newsletter</Navbar.Brand>
-				<div id="mc_embed_signup">
-					<Form
-						flex
-						action="https://gmail.us10.list-manage.com/subscribe/post?u=61def9bff33162874e3fac869&amp;id=a4062c575d"
-						method="post"
-						id="mc-embedded-subscribe-form"
-						name="mc-embedded-subscribe-form"
-						className="validate"
-						target="_blank"
-						novalidate
-					>
-						<div id="mc_embed_signup_scroll">
-							<label for="mce-EMAIL"></label>
-							<input
-								type="email"
-								value=""
-								name="EMAIL"
-								className="email"
-								id="mce-EMAIL"
-								placeholder="email address"
-								required
-							></input>
-							<div aria-hidden="true" id="i2">
-								<input
-									type="text"
-									name="b_61def9bff33162874e3fac869_a4062c575d"
-									tabindex="-1"
-									value=""
-								></input>
-							</div>
-							<div className="clear">
-								<input
-									type="submit"
-									value="Subscribe"
-									name="subscribe"
-									id="mc-embedded-subscribe"
-									className="button"
-								></input>
-							</div>
-						</div>
-					</Form>
-				</div>
+				<Row>
+					<Col md={6} sm={3} id="mailchimp">
+						<Container fluid>
+							<div id="newsletter-head">Behave Newsletter</div>
+							<MailchimpSubscribe url={process.env.REACT_APP_MAILCHIMP_URL} />
+						</Container>
+					</Col>
+					<Col md={6} sm={3} id="social-media">
+						<Container>
+							<SocialIcon url="https://www.facebook.com/B-Have-115388016920669" />
+							<SocialIcon url="https://twitter.com/bhavebkind" />
+							<SocialIcon url="https://www.linkedin.com/company/b-have-b-kind/?viewAsMember=true" />
+							<SocialIcon url="https://www.instagram.com/bhavebkind/" />
+						</Container>
+					</Col>
+				</Row>
 			</Navbar>
 			<ContactModal />
 			<AmplifySignOut id="sign-out" />
