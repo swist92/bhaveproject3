@@ -6,7 +6,7 @@ const { Router } = require("express");
 // /api/inspiration
 router.get("/", function (req, res) {
   const params = new url.URLSearchParams({
-    t: "Wisdom",
+    t: "Happiness, Meditation",
     maxR: "1",
     size: "medium",
   });
