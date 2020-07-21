@@ -1,8 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { SocialIcon } from "react-social-icons";
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 // Style
@@ -12,10 +11,10 @@ import bee2 from "./images/bee2.png";
 import Image from "react-bootstrap/Image";
 
 //Authorization
-import Amplify from "aws-amplify";
+// import Amplify from "aws-amplify";
 import { Auth } from "aws-amplify";
 import { AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
-import awsconfig from "./aws-exports";
+// import awsconfig from "./aws-exports";
 
 // Common Components
 import Nav from "./common/Nav";
@@ -72,14 +71,15 @@ function App() {
 				</Container>
 			</Router>
 			<Navbar bg="dark" id="navb">
+				<Image src={bee2} id="bee2" />
 				<Row>
-					<Col md={6} sm={3} id="mailchimp">
+					<Col md={6} sm={4} id="mailchimp">
 						<Container fluid>
 							<div id="newsletter-head">Behave Newsletter</div>
 							<MailchimpSubscribe url={process.env.REACT_APP_MAILCHIMP_URL} />
 						</Container>
 					</Col>
-					<Col md={6} sm={3} id="social-media">
+					<Col md={6} sm={6} id="social-media">
 						<Container>
 							<SocialIcon url="https://www.facebook.com/B-Have-115388016920669" />
 							<SocialIcon url="https://twitter.com/bhavebkind" />
@@ -88,6 +88,7 @@ function App() {
 						</Container>
 					</Col>
 				</Row>
+				<Image src={bee2} id="bee2" />
 			</Navbar>
 			<ContactModal />
 			<AmplifySignOut id="sign-out" />
