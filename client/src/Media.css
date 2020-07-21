@@ -34,3 +34,9 @@
 		inline-size: 32%;
 	}
 }
+
+@media only screen and (max-width: 770px) {
+	#social-media {
+		padding-top: 20px;
+	}
+}

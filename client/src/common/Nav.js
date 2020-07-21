@@ -19,12 +19,7 @@ function Navbar() {
 			</Link>
 			<Link to={`/HivePublic`}>
 				<button id="right">
-					<img
-						src={Hive}
-						alt="Hive Button"
-						onClick={"this toggles to hive"}
-						id="img-btn"
-					/>
+					<img src={Hive} alt="Hive Button" id="img-btn" />
 				</button>
 			</Link>
 			<Link to={`/Inspiration`}>
@@ -32,19 +27,13 @@ function Navbar() {
 					<img
 						src={Inspire}
 						alt="pictures with motivation quotes"
-						onClick={"this toggles to hive"}
 						id="img-btn"
 					/>
 				</button>
 			</Link>
 			<Link to={`/Community`}>
 				<button id="right">
-					<img
-						src={Community}
-						alt="blank hex"
-						onClick={"this toggles to hive"}
-						id="img-btn"
-					/>
+					<img src={Community} alt="blank hex" id="img-btn" />
 				</button>
 			</Link>
 		</div>
