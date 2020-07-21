@@ -7,7 +7,6 @@ import Logo from "../images/logo-large.png";
 
 // React Bootstrap Components
 import Image from "react-bootstrap/Image";
-import { Container } from "react-bootstrap";
 
 function Navbar() {
 	return (
