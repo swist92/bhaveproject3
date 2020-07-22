@@ -1,75 +1,25 @@
-import React, { Component } from 'react';
-import CharityArray from "./CharityArray.js";
+import React, { Component } from "react";
 
-
-
-class CharityList extends Component {
-    render() {
-        return (
-            <div className="charityList">
-                <span className="charityCompanyList">
-                    <CharityArray> Charity List
-                </CharityArray> </span>
-                {/*array.map */}
+function CharityList(props) {
+  return (
+    <div className="charityList">
+      <span className="charityCompanyList">
+        <div className="charityList">
+          {props.charities.map((charity) => (
+            <div key={charity.name} className="charityContainer">
+              <h1>Name: {charity.name}</h1>
+              <h3>City: {charity.city}</h3>
+              <a>Website: {charity.url}</a>
+              <h3>Donation URL: {charity.donationUrl}</h3>
             </div>
-        )
-    }
-};
+          ))}
+        </div>
+      </span>
+    </div>
+  );
+}
 
 export default CharityList;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // const CharityForm = props => (
 //     <>
