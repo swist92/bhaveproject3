@@ -7,18 +7,7 @@ class CharityArray extends Component {
         const p = this.props;
 
         return (
-            <div className="charityList">
-                <span className="charityCompanyList"> Charity List </span>
-                <div className="charityContainer">
-                    <h1>Name: {p.charityName}</h1>
-                    <h3>City: {p.city}</h3>
-                    <a>Website: {p.url}</a>
-                    <h3>Donation URL: {p.donationUrl}</h3>
-
-
-                </div>
-
-            </div>
+            
         )
     }
 }
