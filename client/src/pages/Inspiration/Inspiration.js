@@ -4,27 +4,41 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import API from "../../utils/API";
 import Gift from "../../components/Gifts/Gift";
+
 class Inspiration extends Component {
-  state = {
-    image: "",
-    compliment: "",
-  };
+  constructor(props) {
+    super(props);
+    console.log(props);
+    this.state = {
+      image: "",
+      complimentObj: {
+        // TODO: replace below with username, for now, hard coded in
+        username: "swist",
+        userTwo: "",
+        compliment: "",
+      },
+    };
+  }
   
   handleSubmit = (event) => {
     event.preventDefault();
-	console.log(this.state.compliment);
-	API.createCompliment()
-		.then((res) =>{
-			this.setState({
-				compliment: this.state.compliment,
-			})
-		})
-		.catch((err) => console.log(err));
+    API.createCompliment(this.state.complimentObj)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
   };
 
-  handleCompliment = (event) => {
-    this.setState({ compliment: event.target.value });
+  handleInputChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      complimentObj: {
+        ...this.state.complimentObj,
+        [name]: value,
+      },
+    });
   };
+
   loadNextInspiration = (event) => {
     event.preventDefault();
     API.getRandomInspiration()
@@ -44,6 +58,9 @@ class Inspiration extends Component {
             <Form.Control
               type="text"
               placeholder="Write the name of someone you care about..."
+              value={this.state.userTwo}
+              onChange={this.handleInputChange}
+              name="userTwo"
             />
           </Form.Group>
         </Form>
@@ -63,7 +80,7 @@ class Inspiration extends Component {
             name="compliment"
             placeholder="EX. You look fly."
             value={this.state.compliment}
-            onChange={this.handleCompliment}
+            onChange={this.handleInputChange}
             as="textarea"
             rows="3"
           />

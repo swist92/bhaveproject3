@@ -36,64 +36,65 @@ import Community from "./pages/Community/Community";
 import API from "./utils/API";
 
 function App() {
-	Auth.currentAuthenticatedUser({
-		bypassCache: true, // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
-	})
-		.then((user) => {
-			console.log(user);
-			const userObj = {
-				username: user.username,
-				email: user.attributes.email,
-				sub: user.attributes.sub,
-			};
-			API.createUser(userObj);
-		})
-		.catch((err) => console.log(err));
+  // TODO: Every time App.js is loaded, a new user is created, so now you have 200-something users in your database
+  Auth.currentAuthenticatedUser({
+    bypassCache: true, // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
+  })
+    .then((user) => {
+      console.log(user);
+      const userObj = {
+        username: user.username,
+        email: user.attributes.email,
+        sub: user.attributes.sub,
+      };
+      API.createUser(userObj);
+    })
+    .catch((err) => console.log(err));
 
-	return (
-		<AmplifyAuthenticator>
-			<Router>
-				<Container fluid id="main-box">
-					<Row>
-						<Col md={2} sm={3} id="btn-cont">
-							<Nav />
-						</Col>
-						<Col md={9} sm={9} id="content-cont">
-							<h1 id="dash">.</h1>
-							<Container id="dash-content">
-								<Route exact path="/" component={Home} />
-								<Route path="/HivePublic" component={HivePublic} />
-								<Route path="/Inspiration" component={Inspiration} />
-								<Route path="/Community" component={Community} />
-							</Container>
-						</Col>
-					</Row>
-				</Container>
-			</Router>
-			<Navbar bg="dark" id="navb">
-				<Image src={bee2} id="bee2" />
-				<Row>
-					<Col md={6} sm={4} id="mailchimp">
-						<Container fluid>
-							<div id="newsletter-head">Behave Newsletter</div>
-							<MailchimpSubscribe url={process.env.REACT_APP_MAILCHIMP_URL} />
-						</Container>
-					</Col>
-					<Col md={6} sm={6} id="social-media">
-						<Container>
-							<SocialIcon url="https://www.facebook.com/B-Have-115388016920669" />
-							<SocialIcon url="https://twitter.com/bhavebkind" />
-							<SocialIcon url="https://www.linkedin.com/company/b-have-b-kind/?viewAsMember=true" />
-							<SocialIcon url="https://www.instagram.com/bhavebkind/" />
-						</Container>
-					</Col>
-				</Row>
-				<Image src={bee2} id="bee2" />
-			</Navbar>
-			<ContactModal />
-			<AmplifySignOut id="sign-out" />
-		</AmplifyAuthenticator>
-	);
+  return (
+    <AmplifyAuthenticator>
+      <Router>
+        <Container fluid id="main-box">
+          <Row>
+            <Col md={2} sm={3} id="btn-cont">
+              <Nav />
+            </Col>
+            <Col md={9} sm={9} id="content-cont">
+              <h1 id="dash">.</h1>
+              <Container id="dash-content">
+                <Route exact path="/" component={Home} />
+                <Route path="/HivePublic" component={HivePublic} />
+                <Route path="/Inspiration" component={Inspiration} />
+                <Route path="/Community" component={Community} />
+              </Container>
+            </Col>
+          </Row>
+        </Container>
+      </Router>
+      <Navbar bg="dark" id="navb">
+        <Image src={bee2} id="bee2" />
+        <Row>
+          <Col md={6} sm={4} id="mailchimp">
+            <Container fluid>
+              <div id="newsletter-head">Behave Newsletter</div>
+              <MailchimpSubscribe url={process.env.REACT_APP_MAILCHIMP_URL} />
+            </Container>
+          </Col>
+          <Col md={6} sm={6} id="social-media">
+            <Container>
+              <SocialIcon url="https://www.facebook.com/B-Have-115388016920669" />
+              <SocialIcon url="https://twitter.com/bhavebkind" />
+              <SocialIcon url="https://www.linkedin.com/company/b-have-b-kind/?viewAsMember=true" />
+              <SocialIcon url="https://www.instagram.com/bhavebkind/" />
+            </Container>
+          </Col>
+        </Row>
+        <Image src={bee2} id="bee2" />
+      </Navbar>
+      <ContactModal />
+      <AmplifySignOut id="sign-out" />
+    </AmplifyAuthenticator>
+  );
 }
 
 export default App;

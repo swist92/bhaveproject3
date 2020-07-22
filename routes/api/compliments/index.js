@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const db = require("../../../models");
 
-// GET - /api/Compliments
+// GET - /api/compliments
 router.get("/", async function (req, res) {
   try {
     res.json(await db.Compliment.find());
@@ -10,7 +10,7 @@ router.get("/", async function (req, res) {
   }
 });
 
-// GET - /api/Compliments/:id
+// GET - /api/compliments/:id
 router.get("/:id", async function (req, res) {
   try {
     res.json(await db.Compliment.findById(req.params.id));
@@ -19,8 +19,9 @@ router.get("/:id", async function (req, res) {
   }
 });
 
-// POST - /api/Compliments
+// POST - /api/compliments
 router.post("/", async function (req, res) {
+  console.log(req.body);
   try {
     res.json(await db.Compliment.create(req.body));
   } catch (err) {

@@ -1,32 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 
-
-export default class Comp extends Component {
-
-    function Comp {
-        return
-        //returning the comp component
-    }
-   
-    constructor(props) {
-		super(props);
-		this.state = {
-		  username: [],
-		  userTwo: [],
-		};
-		
-	sendName() 
-	  console.log('sendName');
-	//   if (this.state.isFormFilledProfile) {
-        console.log('sendName');
-		const data = {
-            username: this.state.username,
-            userTwo: this.state.userTwo,
-		};
-    }
+function Comp(props) {
+  return (
+    <p>
+      {props.username} said {props.compliment} to {props.userTwo}.
+    </p>
+  );
 }
 
-
+export default Comp;
 
 //     getcharity = (event) => {
 //         event.preventDefault();
@@ -84,4 +66,3 @@ export default class Comp extends Component {
 //         );
 //     };
 // };
-
