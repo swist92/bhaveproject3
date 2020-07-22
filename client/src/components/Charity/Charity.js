@@ -20,7 +20,9 @@ export default class Charity extends Component {
 			error: null,
 			zipCode: [],
 			isLoaded: false,
-			charityArray: [],
+			charityArray: [
+
+			],
 		}
 
 
@@ -60,11 +62,11 @@ export default class Charity extends Component {
 	// 	};
 	// // };
 
-	// addCharity = (charityInfo) => {
-	// 	this.setState(prevState => ({
-	// 		charityArray: [...prevState.charityArray, charityInfo]
-	// 	}));
-	// };
+	addCharity = (charityInfo) => {
+		this.setState(prevState => ({
+			charityArray: [...prevState.charityArray, charityInfo]
+		}));
+	};
 
 	getcharity = async (event, charityInfo) => {
 		console.log("sf");
@@ -74,6 +76,7 @@ export default class Charity extends Component {
 			.then((res) => {
 				console.log(res.data);
 				this.setState(prevState => ({
+					res.data.data[0]
 					charityArray: [...prevState.charityArray, charityInfo]
 				}));
 			}).catch((err) => console.log(err));
