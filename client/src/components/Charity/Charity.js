@@ -82,9 +82,9 @@ export default class Charity extends Component {
 			.get("api/charity")
 			.then(response =>
 				response.data.res.map(user => ({
-					charityName: `${response.user.charityName}`,
-					zipCode: `${response.user.zipCode}`,
-					city: `${response.user.city}`,
+					charityName: `${response.data.data.charityName}`,
+					zipCode: `${response.data.data.zipCode}`,
+					city: `${response.data.data.city}`,
 					url: `${response.data.data.url}`,
 					donationUrl: `${response.data.data.donationUrl}`
 				}))
