@@ -8,29 +8,40 @@ const { Router } = require("express");
 // /api/cha
 
 router.get("/", function (req, res) {
+    console.log("sjs");
     const params = new url.URLSearchParams({
         zipCode: " ",
-        searchTerm: " ",
 
     });
     axios
         .get(
-            `http://data.orghunter.com/v1/charitysearch?user_key=${accessKey}&zipCode=${req.params.search}&rows=5`,
+            `http://data.orghunter.com/v1/charitysearch?user_key=b791a1a4ede819dd04a895166984238e&zipCode=85028&rows=5`,
             {
                 responseType: "json",
             }
         )
-        .then(function ({ search }) {
-            res.json(data)
-        })
-        .catch(function (err) {
+        .then(function (data) {
+            // res.json(data);
+            console.log(JSON.stringify(
+                data.data, 4));
+
+
+            res.json(
+                data.data.data
+
+            )
+
+
+            // res.json(JSON.stringify(
+            //     data.data)
+        }).catch(function (err) {
             console.log(err);
         });
 });
 
 // router.get("/", async function (req, res) {
 //     try {
-//       res.json(await);
+//       res.json(await );
 //     } catch (err) {
 //       res.status(500).end();
 //     }

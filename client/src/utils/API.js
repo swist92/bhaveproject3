@@ -11,10 +11,12 @@ export default {
   getRandomInspiration: function () {
     return axios.get("/api/inspiration");
   },
+
   getCompliments: function () {
     return axios.get("/api/compliments");
   },
   createCompliment: function (complimentData) {
     return axios.post("/api/compliments", complimentData);
   },
+
 };

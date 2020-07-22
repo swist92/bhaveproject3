@@ -6,6 +6,7 @@ import API from "../../utils/API";
 import Gift from "../../components/Gifts/Gift";
 
 class Inspiration extends Component {
+
   constructor(props) {
     super(props);
     console.log(props);
@@ -27,6 +28,7 @@ class Inspiration extends Component {
         console.log(res);
       })
       .catch((err) => console.log(err));
+
   };
 
   handleInputChange = (event) => {
@@ -49,6 +51,7 @@ class Inspiration extends Component {
       })
       .catch((err) => console.log(err));
   };
+
   render() {
     return (
       <>
@@ -71,11 +74,13 @@ class Inspiration extends Component {
         >
           Random
         </Button>
+
         <Form.Text className="text-muted">
           Make someone's day with our automated inspiration generator.
         </Form.Text>
         <Form.Group controlId="exampleForm.ControlTextarea1">
           <Form.Label>Write Compliment</Form.Label>
+
           <Form.Control
             name="compliment"
             placeholder="EX. You look fly."
@@ -96,4 +101,5 @@ class Inspiration extends Component {
     );
   }
 }
+
 export default Inspiration;
