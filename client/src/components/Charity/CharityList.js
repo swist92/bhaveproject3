@@ -1,21 +1,37 @@
 import React, { Component } from "react";
 
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Nav';
+import Col from 'react-bootstrap/Col';
+
+
+
+
 function CharityList(props) {
   return (
-    <div className="charityList">
-      <span className="charityCompanyList">
-        <div className="charityList">
-          {props.charities.map((charity) => (
-            <div key={charity.name} className="charityContainer">
-              <h1>Name: {charity.name}</h1>
-              <h3>City: {charity.city}</h3>
-              <a>Website: {charity.url}</a>
-              <h3>Donation URL: {charity.donationUrl}</h3>
-            </div>
-          ))}
-        </div>
-      </span>
-    </div>
+    // <div className="row">
+    //   <div className="row text-center">
+    //     <div className="card">
+    //       <div className="charityList">
+    <span className="charityCompanyList">
+      <div className="charityList">
+        {props.charities.map((charity) => (
+          <div key={charity.name} className="charityContainer">
+            <h4>Name: {charity.charityName}</h4>
+            <h6>Category: {charity.category}</h6>
+            <h6>City: {charity.city}</h6>
+
+            <a target="_blank" href={charity.url}><button className="btn btn-primary">Charity Website</button> </a>
+
+          </div>
+        ))}
+      </div>
+    </span>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+
   );
 }
 
@@ -65,3 +81,5 @@ export default CharityList;
 // );
 
 // export default CharityForm;
+
+

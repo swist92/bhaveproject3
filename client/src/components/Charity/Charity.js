@@ -25,7 +25,8 @@ export default class Charity extends Component {
     Axios.get("/api/charity")
       .then(({ data }) => {
         const charities = data.map((charity) => ({
-          charityName: charity.name,
+          charityName: charity.charityName,
+          category: charity.category,
           zipCode: charity.zipCode,
           city: charity.city,
           url: charity.url,

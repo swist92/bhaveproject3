@@ -2,7 +2,8 @@ import React from "react";
 import { SocialIcon } from "react-social-icons";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
+// import MailchimpSubscribe from "react-mailchimp-subscribe";
+import Mailchimp from "react-mailchimp-form";
 
 // Style
 import "./App.css";
@@ -77,7 +78,18 @@ function App() {
           <Col md={6} sm={4} id="mailchimp">
             <Container fluid>
               <div id="newsletter-head">Behave Newsletter</div>
-              <MailchimpSubscribe url={process.env.REACT_APP_MAILCHIMP_URL} />
+              {/* <MailchimpSubscribe url={process.env.REACT_APP_MAILCHIMP_URL} /> */}
+              <Mailchimp
+                action='https://gmail.us10.list-manage.com/subscribe/post?u=61def9bff33162874e3fac869&amp;id=a4062c575d'
+                fields={[
+                  {
+                    name: 'EMAIL',
+                    placeholder: 'Email',
+                    type: 'email',
+                    required: true
+                  }
+                ]}
+              />
             </Container>
           </Col>
           <Col md={6} sm={6} id="social-media">
