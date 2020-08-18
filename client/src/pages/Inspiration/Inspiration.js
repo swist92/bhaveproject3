@@ -14,7 +14,7 @@ class Inspiration extends Component {
       image: "",
       complimentObj: {
         // TODO: replace below with username, for now, hard coded in
-        username: "swist",
+        username: "katecwade1",
         userTwo: "",
         compliment: "",
       },
